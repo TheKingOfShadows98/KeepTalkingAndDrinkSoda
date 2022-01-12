@@ -673,6 +673,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1917646211824702959}
   - component: {fileID: 1917646211824702956}
+  - component: {fileID: 2757675340506204998}
   m_Layer: 0
   m_Name: Boton
   m_TagString: Untagged
@@ -720,6 +721,28 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2757675340506204998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1917646211824702957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a30eb32bfbc63934b9703233f4882c06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 1917646211824702956}
+  color: 0
+  phrase: 0
+  timeLapse: 3
+  isDeactiveOnRelease: 0
+  LucesitaSprite: {fileID: 1917646212534980901}
+  digitformBomb: 52
+  counter: {fileID: 0}
+  defaultColor: {r: 0.5566038, g: 0.5566038, b: 0.5566038, a: 1}
+  activeColor: {r: 0.2028302, g: 0.29550272, b: 1, a: 1}
 --- !u!1 &1917646212051785596
 GameObject:
   m_ObjectHideFlags: 0
@@ -729,10 +752,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1917646212051785592}
+  - component: {fileID: 1967623532843189630}
   - component: {fileID: 1917646212051785593}
   - component: {fileID: 1917646212051785598}
   - component: {fileID: 1917646212051785599}
-  - component: {fileID: 1917646212051785595}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
@@ -755,6 +778,51 @@ Transform:
   m_Father: {fileID: 1917646211257099832}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!114 &1967623532843189630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1917646212051785596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e45d73bd93eb044888673c899e1549e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onClickDown:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2757675340506204998}
+        m_TargetAssemblyTypeName: BotonCC, Assembly-CSharp
+        m_MethodName: OnDown
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onClickPress:
+    m_PersistentCalls:
+      m_Calls: []
+  onClickUp:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2757675340506204998}
+        m_TargetAssemblyTypeName: BotonCC, Assembly-CSharp
+        m_MethodName: OnUp
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!33 &1917646212051785593
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -818,28 +886,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1917646212051785595
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1917646212051785596}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a30eb32bfbc63934b9703233f4882c06, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  anim: {fileID: 1917646211824702956}
-  color: 0
-  phrase: 0
-  timeLapse: 3
-  isDeactiveOnRelease: 0
-  LucesitaSprite: {fileID: 1917646212534980901}
-  digitformBomb: 52
-  counter: {fileID: 0}
-  defaultColor: {r: 0.5566038, g: 0.5566038, b: 0.5566038, a: 1}
-  activeColor: {r: 0.2028302, g: 0.29550272, b: 1, a: 1}
 --- !u!1 &1917646212307861202
 GameObject:
   m_ObjectHideFlags: 0

@@ -16,7 +16,7 @@ enum botonPhrase
     detonate,
     drink
 }
-public class BotonCC : TouchAbleObject
+public class BotonCC : MonoBehaviour
 {
     [SerializeField] Animator anim;
     [SerializeField] botonColor color;
@@ -36,7 +36,7 @@ public class BotonCC : TouchAbleObject
 
 
     // Update is called once per frame
-    protected override void OnDown()
+    public void OnDown()
     {
         anim.SetBool("isPressed", true);
 
@@ -44,13 +44,13 @@ public class BotonCC : TouchAbleObject
         LucesitaSprite.color = activeColor;
     }
 
-    protected override void OnPress()
+    public void OnPress()
     {
 
 
     }
 
-    protected override void OnUp()
+    public void OnUp()
     {
 
         anim.SetBool("isPressed", false);
