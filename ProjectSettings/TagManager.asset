@@ -8,11 +8,11 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - noview
   - Water
   - UI
-  - 
-  - 
+  - Dimension A
+  - Dimension B
   - 
   - 
   - 
