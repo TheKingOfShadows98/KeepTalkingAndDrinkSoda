@@ -1,27 +1,42 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class IntectDimension : MonoBehaviour
+namespace Tk.Dimensions
 {
-
-    [SerializeField] private string maskDimension;
-    [SerializeField] private bool active;
-
-
-    private void OnTriggerEnter(Collider other)
+    public class IntectDimension : MonoBehaviour
     {
-        if (other.CompareTag("Player"))
+        [SerializeField] private string maskDimension;
+        [SerializeField] private bool active;
+
+        private void OnTriggerEnter(Collider other)
         {
-            if (active)
+            if (other.CompareTag("Player"))
             {
-                CameraAddCullingMask.instance.AddCullingMask(maskDimension);
+                if (active)
+                {
+                    CameraAddCullingMask.instance.AddCullingMask(maskDimension);
+                }
+                else
+                {
+                    CameraAddCullingMask.instance.RemoveCullingMask(maskDimension);
+                }
+                Physics.IgnoreLayerCollision(3, LayerMask.NameToLayer(maskDimension), !active);
             }
-            else
-            {
-                CameraAddCullingMask.instance.RemoveCullingMask(maskDimension);
-            }
-            Physics.IgnoreLayerCollision(3, LayerMask.NameToLayer(maskDimension), !active);
+            /*
+             * _OLD
+             *
+                if (other.CompareTag("Player"))
+                {
+                    if (active)
+                    {
+                        CameraAddCullingMask.instance.AddCullingMask(maskDimension);
+                    }
+                    else
+                    {
+                        CameraAddCullingMask.instance.RemoveCullingMask(maskDimension);
+                    }
+                    Physics.IgnoreLayerCollision(3, LayerMask.NameToLayer(maskDimension), !active);
+                }
+             */
         }
     }
 }
